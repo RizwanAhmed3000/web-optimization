@@ -10,6 +10,8 @@ import {
 // import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import { lazy, Suspense } from "react";
+import { Provider } from "react-redux";
+import { store } from "./Redux/Store";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -57,7 +59,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </div>
   );
 }
