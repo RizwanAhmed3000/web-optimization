@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import AddToCart from "../components/table.tsx";
 // import sum from "../sum.ts";
 // const sum = lazy(() => import("../sum.ts"));
 
@@ -82,7 +83,7 @@ const Home = () => {
   return (
     <>
       <div>Home</div>
-      <button
+      {/* <button
         onClick={() => {
           import("../sum.ts").then((module) => {
             alert(module.default(2, 2));
@@ -90,10 +91,11 @@ const Home = () => {
         }}
       >
         Add 2 + 2
-      </button>
+      </button> */}
       <br />
+      <AddToCart />
       <br />
-      <button onClick={() => setIsAdmin(!isAdmin)}>Toogle Admin</button>
+      {/* <button onClick={() => setIsAdmin(!isAdmin)}>Toogle Admin</button> */}
       {isAdmin ? <div>you are Admin</div> : <div>you are not Admin</div>}
     </>
   );
